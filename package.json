@@ -1,8 +1,8 @@
 {
-  "name": "rinse-react",
+  "name": "guilda-ui",
   "version": "4.0.0",
-  "description": "Rinse, React, repeat. A React component library boilerplate.",
-  "main": "dist/rinse.js",
+  "description": "Guilda, React, repeat. A React component library boilerplate.",
+  "main": "dist/guildaui.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwlsn/rinse-react.git"
+    "url": "git+https://github.com/andrody/guilda-ui.git"
   },
   "keywords": [
     "boilerplate",
@@ -21,12 +21,12 @@
     "components",
     "components"
   ],
-  "author": "Connor Wilson",
+  "author": "Andrew Feitosa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cwlsn/rinse-react/issues"
+    "url": "https://github.com/andrody/guilda-ui/issues"
   },
-  "homepage": "https://github.com/cwlsn/rinse-react#readme",
+  "homepage": "https://github.com/andrody/guilda-ui#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
