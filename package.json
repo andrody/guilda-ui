@@ -1,6 +1,6 @@
 {
   "name": "guilda-ui",
-  "version": "4.0.0",
+  "version": "0.0.1",
   "description": "Guilda, React, repeat. A React component library boilerplate.",
   "main": "dist/guildaui.js",
   "scripts": {
