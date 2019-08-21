@@ -18,10 +18,10 @@ import cx from 'classnames';
 // `;
 
 // Components are functions, and they must start with a capital letter
-function Button({ primary, className, text, ...props }) {
+function Button({ primary, className, children, ...props }) {
 	return (
-		<button className={cx('guilda-btn', className, { primary })} {...props}>
-			<div className="guilda-btn-text">{text}</div>
+		<button className={cx('nanui-btn', className, { primary })} {...props}>
+			<div className="nanui-btn-text">{children}</div>
 		</button>
 	);
 }

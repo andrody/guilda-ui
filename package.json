@@ -1,18 +1,19 @@
 {
-  "name": "guilda-ui",
+  "name": "nanui",
   "version": "0.0.1",
-  "description": "Guilda, React, repeat. A React component library boilerplate.",
-  "main": "dist/guildaui.js",
+  "description": "Nan UI. A React component library.",
+  "main": "dist/nanui.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 9001",
+    "start": "start-storybook -p 9001",
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrody/guilda-ui.git"
+    "url": "git+https://github.com/andrody/nanui.git"
   },
   "keywords": [
     "boilerplate",
@@ -24,9 +25,9 @@
   "author": "Andrew Feitosa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrody/guilda-ui/issues"
+    "url": "https://github.com/andrody/nanui/issues"
   },
-  "homepage": "https://github.com/andrody/guilda-ui#readme",
+  "homepage": "https://github.com/andrody/nanui#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
@@ -46,10 +47,15 @@
     "webpack-cli": "^3.2.0"
   },
   "dependencies": {
+    "@uifabric/icons": "^7.1.1",
+    "axios": "^0.19.0",
+    "axios-auth-refresh": "^1.0.7",
     "classnames": "^2.2.6",
     "office-ui-fabric-react": "^7.22.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-draggable": "^3.3.2",
+    "react-use": "^10.7.0",
     "styled-components": "^4.2.1"
   }
 }

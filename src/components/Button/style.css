@@ -1,4 +1,4 @@
-.guilda-btn {
+.nanui-btn {
     background-color: rgb(255, 255, 255);
     min-width: 80px;
     height: 32px;
@@ -12,34 +12,35 @@
     text-decoration: none;
     border-radius: 2px;
     color: rgb(50, 49, 48);
+    cursor: pointer;
 }
 
-.guilda-btn:hover {
+.nanui-btn:hover {
     background-color: rgb(243, 242, 241);
     color: rgb(32, 31, 30);
 }
 
-.guilda-btn:active {
+.nanui-btn:active {
     background-color: rgb(237, 235, 233);
     color: rgb(32, 31, 30);
 }
 
-.guilda-btn-text {
+.nanui-btn-text {
     margin: 0 4px;
     line-height: 100%;
     font-weight: 600;
     font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif
 }
 
-.guilda-btn.primary {
+.nanui-btn.primary {
     background-color: rgb(0, 120, 212);
     color: rgb(255, 255, 255);
     border: none;
 }
 
-.guilda-btn.primary:hover {
+.nanui-btn.primary:hover {
     background-color: rgb(16, 110, 190);
 }
-.guilda-btn.primary:active {
+.nanui-btn.primary:active {
     background-color: rgb(0, 90, 158);
 }

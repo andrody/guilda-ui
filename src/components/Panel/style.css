@@ -1,0 +1,21 @@
+.request-inspector {
+    position: fixed;
+    bottom: 60px;
+    min-width: 60px;
+}
+.request-inspector i {
+    font-size: 18px;
+}
+
+.request-inspector.right {
+    right: 0;
+    border-top-right-radius: 0; 
+    border-bottom-right-radius: 0;
+    border-right: 0;
+}
+.request-inspector.left {
+    left: 0;
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
