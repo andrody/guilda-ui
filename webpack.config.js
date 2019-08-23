@@ -12,10 +12,10 @@ module.exports = {
 	// 	new BundleAnalyzerPlugin()
 	//   ],
 	// externals: ['react', 'react-dom'],
-	externals: {
-		'react': 'React', // Case matters here 
-		'react-dom' : 'react-dom' // Case matters here 
-	   },
+	// externals: {
+	// 	'react': 'React', // Case matters here 
+	// 	'react-dom' : 'react-dom' // Case matters here 
+	//    },
 	// module (I know it's a bit weird to have module.exports.module) is where we
 	// define all the rules for how webpack will deal with thing.
 	module: {
