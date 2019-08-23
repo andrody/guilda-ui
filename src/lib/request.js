@@ -7,13 +7,13 @@ let axiosInstance;
 let _mock;
 let _renewTokenEndpoint;
 let _defaultEnv;
-const getDomain = () =>
-	(JSON.parse(localStorage.getItem('nanui-env')) || {}).url;
-const isProduction = process.env.NODE_ENV === 'production';
+let _isProduction;
+export const getDomain = () =>
+	(JSON.parse(localStorage.getItem('nanui-env')) || {}).url || _defaultEnv.url;
 
 // Function that will be called to refresh authorization
-const refreshAuthLogic = (failedRequest, onRefreshedToken) => {
-	return axiosInstance
+const refreshAuthLogic = (failedRequest, onRefreshedToken) =>
+	axiosInstance
 		.post(_renewTokenEndpoint, {
 			token: localStorage.getItem('nanui-token'),
 			renewalToken: localStorage.getItem('nanui-token-renewal'),
@@ -26,7 +26,6 @@ const refreshAuthLogic = (failedRequest, onRefreshedToken) => {
 			failedRequest.response.config.headers.Authentication = token;
 			return Promise.resolve();
 		});
-};
 
 // Logic to get from Mock
 async function getFromMock(method, url) {
@@ -73,14 +72,16 @@ export function initRequest({
 	mock,
 	renewTokenEndpoint,
 	onRefreshedToken,
+	isProduction,
 }) {
 	_mock = mock;
 	_renewTokenEndpoint = renewTokenEndpoint;
 	_defaultEnv = defaultEnv;
+	_isProduction = isProduction;
 
 	// Create Axios Instance
 	axiosInstance = axios.create({
-		baseURL: getDomain() || defaultEnv.url,
+		baseURL: getDomain(),
 		headers: { 'Content-Type': 'application/json' },
 	});
 
@@ -105,7 +106,7 @@ export function initRequest({
 	// Handle Response
 	axiosInstance.interceptors.response.use(
 		(response) => {
-			if (!isProduction) {
+			if (!_isProduction) {
 				printRequest(response);
 			}
 			return response;

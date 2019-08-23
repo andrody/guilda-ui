@@ -1,6 +1,6 @@
 .request-inspector {
     position: fixed;
-    bottom: 60px;
+    bottom: 30px;
     min-width: 60px;
     z-index: 999;
     display: flex;

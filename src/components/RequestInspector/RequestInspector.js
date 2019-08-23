@@ -37,7 +37,7 @@ const options = [
 	},
 ];
 
-function RequestInspector({ className, left, envs, ...props }) {
+function RequestInspector({ className, left, envs, onChange, ...props }) {
 	const [environment, setEnvironment] = useLocalStorage('nanui-env', envs[0]);
 	const [isOpen, setIsOpen] = useState(false);
 	const [pos, setPos] = useLocalStorage('nanui-inspector-pos', {
@@ -51,10 +51,13 @@ function RequestInspector({ className, left, envs, ...props }) {
 	};
 
 	function _onChange(e, option) {
-		setEnvironment({
+		const newEnv = {
 			...option,
 			url: (envs.find((x) => x.key === option.key) || {}).url || '',
-		});
+		};
+		setEnvironment(newEnv);
+
+		if (onChange) onChange(newEnv);
 	}
 
 	const footer = () => (

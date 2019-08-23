@@ -1,6 +1,4 @@
-import stories from "./stories"
+// import stories from './stories';
 
-export { request, initRequest } from './request';
+export { request, initRequest, getDomain } from './request';
 export * from './toast';
-
-
