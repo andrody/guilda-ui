@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+.vscode
+.eslintrc
+.eslintrc.json
+tsconfig.json
+tasks.json
+tests

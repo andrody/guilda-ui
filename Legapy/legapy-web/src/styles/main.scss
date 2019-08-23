@@ -1,0 +1,46 @@
+@import '~react-md/src/scss/react-md';
+
+$md-light-theme: true; // optional for light theme
+$md-primary-color: #0a3456;
+$md-secondary-color: #ef4023;
+$md-colors-warn-md: false;
+$md-colors-warn: false;
+$md-data-table-contextual-fallback-color: rgba($md-primary-color, .32);
+$md-linear-progress-fallback-color: rgba($md-primary-color, .54);
+$md-switch-fallback-color: rgba($md-primary-color, .87);
+
+@include react-md-everything;
+
+// Or for a subsection
+@include react-md-theme-everything($md-indigo-900, $md-deep-orange-a-700, $md-light-theme, 'custom-theme');
+
+// Base
+
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+
+// Components
+@import 'components/landing';
+@import 'components/home';
+@import 'components/nav';
+@import 'components/body';
+@import 'components/auth';
+@import 'components/table';
+@import 'components/forms';
+@import 'components/loading';
+
+// Misc
+@import 'misc/misc';
+
+// Pages
+
+@import 'pages/home';
+@import 'pages/posts';
+@import 'pages/post';
+@import 'pages/admin';
+
+.md-drawer--left {
+    transform: translate3d(0px, 0, 0) !important;
+}

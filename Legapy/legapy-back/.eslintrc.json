@@ -1,0 +1,47 @@
+{
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals": {
+        "expect": true,
+        "it": true,
+        "assert": true,
+        "describe": true,
+        "afterEach": true,
+        "request": true
+      },
+    "plugins": [
+        "react"
+    ],
+    "env": {
+        "browser": true,
+        "jquery": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "max-len": [1, 180, 2, { "ignoreComments": true }],
+        "prop-types": [0],
+        "linebreak-style": [0, "windows"],
+        "indent": ["error", 4],
+        "semi": ["error", "never"],
+        "class-methods-use-this": [0],
+        "new-cap": ["error", { "capIsNew": false }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-indent": [2, 4],
+        "react/forbid-prop-types": 0,
+        "react/prop-types": 0,
+        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": false, "optionalDependencies": false, "peerDependencies": false }],
+        "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+        "jsx-a11y/no-static-element-interactions": 0,
+        "react/jsx-first-prop-new-line": 0,
+        "no-param-reassign": 0,
+        "prefer-template": 0,
+        "consistent-return": [0, { "treatUndefinedAsUnspecified": false }],
+        "valid-typeof": 0,
+        "global-require": 0
+    }
+}

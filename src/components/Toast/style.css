@@ -1,0 +1,107 @@
+/* .nanui-toast-space {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+} */
+.nanui-toast > div {
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302), 0 4px 8px 3px rgba(60, 64, 67, 0.149);
+    letter-spacing: 0.2px;
+    background: #202124;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    font-weight: 400;
+    margin: 24px;
+    max-width: 640px;
+    min-height: 52px;
+    padding: 8px 24px;
+    padding-right: 52px;
+    text-align: left;
+    white-space: normal;
+    z-index: 990;
+}
+
+.Toastify__toast-container {
+    width: auto !important;
+    max-width: 710px;
+}
+
+.Toastify__close-button {
+    align-self: center !important;
+    opacity: 0.5 !important;
+    font-family: sans-serif;
+    position: absolute;
+    right: 20px;
+}
+
+.nanui-toast-close-button-space {
+    position: absolute;
+    right: 15px;
+}
+.nanui-toast-close-button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nanui-toast-close-button i {
+    font-size: 20px;
+    opacity: 0.6;
+    color: white;
+}
+
+.nanui-toast-close-button:before {
+    content: '';
+    display: block;
+    opacity: 0;
+    position: absolute;
+    transition-duration: .15s;
+    transition-timing-function: cubic-bezier(0.4,0.0,0.2,1);
+    z-index: -1;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    background: none;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transform: scale(0);
+    transition-property: transform,opacity;
+}
+.nanui-toast-close-button:hover:before {
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    transform: scale(1);
+}
+.nanui-toast-close-button:hover i {
+    opacity: 1;
+}
+
+.toast-message {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.toast-message .toast-type-icon {
+    margin-right: 15px;
+    margin-left: -6px;
+    font-size: 18px;
+}
+
+.Toastify__toast--success .toast-type-icon {
+    color: #00af69;
+}
+.Toastify__toast--error .toast-type-icon {
+    color: #e74c3c;
+}
+.Toastify__toast--warning .toast-type-icon {
+    color: #e67e22;
+}

@@ -2,20 +2,31 @@
     position: fixed;
     bottom: 60px;
     min-width: 60px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    transition: padding 0.1s;
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    background-color: #dad9d8;
 }
 .request-inspector i {
     font-size: 18px;
+    margin-right: 8px;
 }
 
 .request-inspector.right {
     right: 0;
-    border-top-right-radius: 0; 
-    border-bottom-right-radius: 0;
+    border-radius: 20px 0 0 20px;
     border-right: 0;
 }
 .request-inspector.left {
     left: 0;
-    border-top-left-radius: 0; 
-    border-bottom-left-radius: 0;
+    border-radius: 0 20px 20px 0;
     border-left: 0;
+}
+.request-inspector:hover {
+    padding-left: 30px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
 }

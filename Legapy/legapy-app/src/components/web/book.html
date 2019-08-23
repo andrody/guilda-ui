@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <style>
+        table table {
+            display: none;
+        }
+        blockquote {
+            margin: 0;
+            width: 100% !important;
+        }
+
+        body {
+            font-family: "Source Sans Pro", "Serif" !important;
+            padding: 20px 10px;
+        }
+
+        a {
+            color: black;
+            pointer-events: none;
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+        }
+
+        table {
+            font-family: "Source Sans Pro", "Serif" !important;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        td {
+            font-family: "Source Sans Pro", "Serif" !important;
+        }
+
+        td p {
+            text-align: left !important;
+            font-weight: normal !important;
+        }
+
+        td p a {
+            pointer-events: none;
+            /* color: rgb(255, 255, 255) !important; */
+        }
+
+        tr p a {
+            pointer-events: none;
+        }
+
+        .recuadro_gris {
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("message", function (data) {
+            document.body.innerHTML = JSON.parse(data.data).HTML.replace(/<\s*a[^>]*>(.*?)/g, "<span>").replace(/<\s*\/s*a>/g, "</span>")
+        });
+    </script>
+</head>
+
+<body>
+    Aguarde ...
+</body>
+
+</html>

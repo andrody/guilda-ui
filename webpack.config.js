@@ -1,12 +1,21 @@
 // Path is in Node for free and will make simple resolving of directories no
 // matter which part of your file system your library lives in
 const path = require('path');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Webpack is just a bunch of keys on module.exports!
 module.exports = {
 	// This is where our app starts. This is why we have done all this importing
 	// and exporting, to get to here
 	entry: './src/index.js',
+	// plugins: [
+	// 	new BundleAnalyzerPlugin()
+	//   ],
+	// externals: ['react', 'react-dom'],
+	externals: {
+		'react': 'React', // Case matters here 
+		'react-dom' : 'react-dom' // Case matters here 
+	   },
 	// module (I know it's a bit weird to have module.exports.module) is where we
 	// define all the rules for how webpack will deal with thing.
 	module: {
@@ -56,6 +65,10 @@ module.exports = {
 	resolve: {
 		extensions: ['.css', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
 	},
+
+	// Desabilitar para produção
+	// devtool: 'eval-source-map',
+
 	// This is where we define how everything gets output.
 	// dist is a common output folder, and it should be gitignored. The build can
 	// be run after publishing so you don't wind up with it in source control

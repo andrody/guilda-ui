@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+        function saveToFile() {
+            // var data = document.getElementById("text").value;
+            let pTag = $('iframe').contents().find('#_mce_caret').parent()
+            while (pTag.length > 0) {
+                pTag = $('iframe').contents().find('#_mce_caret').parent()
+                pTag.remove()
+            }
+            const data = tinyMCE.get('text').getContent()
+            const parsedData = data.replace(/\\n/g, '').replace(/\\"/g, '"').replace(/\r?\n|\r/g, '').replace(/<\s*a[^>]*>(.*?)/g, "<span>").replace(/<\s*\/s*a>/g, "</span>")
+            window.postMessage(JSON.stringify(data))
+        }
+    </script>
+    <script>
+        var screenHeight
+        document.addEventListener("message", function (data) {
+            $(tinyMCE.activeEditor.getDoc()).children().find('head').append('<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">')
+            $(tinyMCE.activeEditor.getDoc()).children().find('body').css('font-family', 'Source Sans Pro')
+            $(tinyMCE.activeEditor.getDoc()).children().find('body').css('padding', '0 15px')
+            $(tinyMCE.activeEditor.getDoc()).children().find('body').addClass('removeTable')
+            tinymce.get('text').setContent(JSON.parse(data.data).HTML.replace(/\\n/g, '').replace(/\\"/g, '"').replace(/\r?\n|\r/g, '').replace(/<\s*a[^>]*>(.*?)/g, "<span>").replace(/<\s*\/s*a>/g, "</span>"))
+            $("iframe").contents().find("p").attr('align', 'left')
+            if (JSON.parse(data.data).device === 'ios') {
+                window.onfocus = () => {
+                    console.log('focus')
+                    $("#mceu_5").css('position', 'absolute')
+                }
+                window.onscroll = () => {
+                    console.log('scroll')
+                    console.log($(window).scrollTop())
+                    $("#mceu_5").css('top', $(window).scrollTop())
+                }
+            } else {
+                tinymce.get('text').getBody().setAttribute('contenteditable', 'false')
+                $("iframe").contents().find("body").removeAttr("contenteditable");
+            }
+        });
+
+        tinymce.init({
+            selector: 'textarea',
+            height: 700,
+            toolbar_items_size: 'medium',
+            statusbar: false,
+            menubar: false,
+            alignleft: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
+            style_formats: [{
+                title: 'Bold text',
+                inline: 'b'
+            }],
+            plugins: [
+                'textcolor'
+            ],
+            toolbar1: 'forecolor backcolor | bold | selectFont',
+            fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+            textcolor_map: [
+                "000000", "Black",
+                "FFFFFF", "White",
+                "FFFF00", "Yellow",
+                "00FF00", "Lime",
+            ],
+            setup: function (editor) {
+                editor.on('keypress keydown keyup', function (e) {
+                    // console.log(e.keyCode)
+                    e.preventDefault()
+                    // var e = $.Event("keydown", { keyCode: 20 });
+                    // $(tinymce.get('text').getBody()).trigger(e)
+                });
+                editor.addButton('selectFont', {
+                    type: 'listbox',
+                    text: 'Tamaño',
+                    icon: false,
+                    onselect: function (e) {
+                        //editor.getBody().style.fontSize = this.value();
+                        //tinyMCE.activeEditor.dom.setStyle(tinyMCE.activeEditor.dom.select('td'), 'font-size', this.value());
+                        tinyMCE.activeEditor.dom.setStyle(tinyMCE.activeEditor.dom.select('p'), 'font-size', this.value());
+                    },
+                    values: [
+                        { text: '8px ', value: '8px' },
+                        { text: '10px ', value: '10px' },
+                        { text: '12px ', value: '12px' },
+                        { text: '14px ', value: '14px' },
+                        { text: '18px ', value: '18px' },
+                        { text: '24px ', value: '24px' },
+                        { text: '36px ', value: '36px' },
+                    ],
+                });
+            },
+        });
+    </script>
+</head>
+
+<body>
+    <form role="form">
+        <textarea id="text">Espere un instante, preparando el texto de ley ...</textarea>
+        <buttom id="btn" onclick="saveToFile()" type="submit" class="save-btn">Guardar</buttom>
+    </form>
+</body>
+<style>
+    .mce-content-body table table {
+            display: none;
+        }
+    .mce-content-body {
+        padding: 0px 15px !important;
+    }
+
+    #text_ifr {
+        margin-top: 70px;
+    }
+
+    .save-btn {
+        padding: 28px 14px;
+        border-radius: 50px;
+        background-color: #0a3456;
+        color: white;
+        position: fixed;
+        text-align: center;
+        transition: all 200ms;
+        bottom: 8%;
+        right: 3%;
+        box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, 0.28);
+        font-size: 12px;
+        font-family: "helvetica", "Serif";
+    }
+
+    .save-btn:active {
+        background-color: gray;
+    }
+
+    body {
+        margin: 0 !important;
+        font-family: "Source Sans Pro", "Serif" !important;
+        text-align: left !important;
+    }
+
+    a {
+        pointer-events: none;
+        color: black;
+    }
+
+    #mceu_5 {
+        position: fixed;
+        width: 100%;
+    }
+
+    #mceu_10 {
+        padding-top: 14px;
+    }
+
+    .mce-ico {
+        font-size: 45px !important;
+    }
+
+    i.mce-i-backcolor {
+        width: 100%;
+        height: 37px;
+        line-height: .8;
+    }
+
+    i.mce-i-forecolor {
+        width: 100%;
+        height: 37px;
+        line-height: .8;
+    }
+
+    .mce-btn button {
+        font-size: 19px;
+    }
+
+    #mceu_2-button {
+        padding-right: 24px;
+        padding-top: 20px;
+    }
+
+    #mceu_12 {
+        display: none;
+    }
+
+    .mce-colorbutton .mce-preview {
+        margin-left: -22px;
+        width: 24px;
+        margin-top: 13px;
+    }
+
+    .mce-btn button {
+        padding: 9px 6px;
+    }
+
+    .mce-listbox .mce-caret {
+        right: -14px;
+    }
+
+    #mceu_0.mce-btn .mce-caret {
+        margin-top: 36px;
+    }
+
+    #mceu_1.mce-btn .mce-caret {
+        margin-top: 36px;
+    }
+
+    #mceu_22 {
+        width: 180px;
+        height: 48px;
+    }
+
+    .mce-grid td.mce-grid-cell div {
+        width: 30px;
+        height: 30px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+</style>
+
+</html>

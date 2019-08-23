@@ -1,0 +1,17 @@
+{
+    "extends": "@tulipjs",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "linebreak-style": [0],
+        "indent": [0],
+        "import/no-extraneous-dependencies": [0],
+        "prefer-template": [0],
+        "function-paren-newline": [0],
+        "comma-dangle": [0],
+        "brace-style": [0],
+        "react/prop-types": [0],
+    },
+}

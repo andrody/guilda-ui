@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "androidStatusBarColor": "#002b44",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#002b44"
+    },
+    "name": "Legapy",
+    "description": "Es ley estar actualizado.",
+    "slug": "legapy",
+    "privacy": "public",
+    "sdkVersion": "26.0.0",
+    "splash": {
+      "backgroundColor": "#003255",
+      "resizeMode": "cover"
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/lpicon.png",
+    "updates": {
+      "fallbackToCacheTimeout": 30000
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.pegasus.Legapy",
+      "buildNumber": "4",
+      "publishBundlePath": "ios/legapy/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/legapy/Supporting/shell-app-manifest.json"
+    },
+    "android": {
+      "package": "com.py.pegasus.legapy",
+      "versionCode": 7
+    },
+    "isDetached": true,
+    "detach": {
+      "scheme": "expde4451909d214ddbbc510c46c32651e1",
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.4.4-sdk26.0.0-3bd935c7-cdd3-4002-8e44-4df857a675f2.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.4.0-sdk26.0.0-e63d9209-070c-4118-b06b-c60e82da0b66.tar.gz"
+    }
+  }
+}
