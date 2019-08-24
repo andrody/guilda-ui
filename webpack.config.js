@@ -64,6 +64,11 @@ module.exports = {
 	// Here we define explicitly the file types we intend to deal with
 	resolve: {
 		extensions: ['.css', '.js', '.json', '.png', '.gif', '.jpg', '.svg'],
+		// symlinks: false,
+		// alias: {
+		// 	react: path.resolve('./node_modules/react'),
+		// 	'react-dom': path.join('./node_modules', 'react-dom'),
+		// },
 	},
 
 	// Desabilitar para produção

@@ -1,6 +1,6 @@
 {
   "name": "nanui",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Nan UI. A React component library.",
   "main": "dist/nanui.js",
   "scripts": {
@@ -31,15 +31,18 @@
   "homepage": "https://github.com/andrody/nanui#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.0-alpha.20",
     "@storybook/react": "^4.0.0-alpha.20",
     "@tulipjs/eslint-config": "^1.1.1",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.1",
     "css-loader": "^1.0.0",
     "docz": "^1.2.0",
     "docz-theme-default": "^1.2.0",
+    "eslint": "^6.2.2",
     "eslint-config-react-app": "^5.0.1",
     "node-sass": "^4.9.3",
     "react": "^16.9.0",

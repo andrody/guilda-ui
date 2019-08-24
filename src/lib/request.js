@@ -1,5 +1,5 @@
 import axios from 'axios';
-import createAuthRefreshInterceptor from 'axios-auth-refresh';
+import createAuthRefreshInterceptor from '../core/axios-auth-refresh';
 import { toast } from './toast';
 
 // Get Domain from LocalStorage
@@ -63,6 +63,10 @@ function printRequest(response) {
 	console.groupEnd();
 }
 
+function getAccessToken() {
+	return localStorage.getItem('nanui-token');
+}
+
 /*
  * OnRefreshed: Callback to update token on localStorage: eg: () => localStorage.setItem('token', tokenRefreshResponse.data.token);
  * getAccessToken: Callback to always get updated token from localStorage; eg: () => ;
@@ -95,7 +99,7 @@ export function initRequest({
 	);
 
 	axiosInstance.interceptors.request.use((request) => {
-		const token = localStorage.getItem('nanui-token');
+		const token = getAccessToken();
 
 		if (token) {
 			request.headers['Authorization'] = token;
