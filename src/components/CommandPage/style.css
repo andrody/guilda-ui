@@ -1,0 +1,56 @@
+.command-page-space {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.command-page {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+.command-page-content {
+    overflow: auto;
+    flex: 1;
+}
+
+.command-page-panel {
+    width: 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: 367ms cubic-bezier(.1,.9,.2,1);
+}
+
+/* OPEN Panel
+============================*/
+.command-page-space.isCommandPanelOpen .command-page-content {
+    overflow-y: scroll;
+}
+.command-page-space.isCommandPanelOpen .command-page-panel {
+    width: 315px;
+}
+
+/* Command Bar
+============================*/
+.command-bar .ms-CommandBar {
+    background-color: #f4f4f4;
+}
+.command-bar .ms-Button--commandBar {
+    background-color: transparent;
+}
+.command-bar .ms-Button--commandBar:hover {
+    background-color: rgb(237, 235, 233);
+    color: rgb(32, 31, 30);
+}
+.command-bar .ms-Button--commandBar:active {
+    background-color: #e8e6e4;
+    color: rgb(32, 31, 30);
+}
+.ms-Button-icon {
+    color: #367fee;
+}

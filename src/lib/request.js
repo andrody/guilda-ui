@@ -119,7 +119,7 @@ export function initRequest({
 			if (error.response) {
 				printRequest(error.response);
 				try {
-					if (error.status !== '403') {
+					if (error.response.status != 403) {
 						toast(error.response.data.errors[0].descriptions[0], 'error');
 					}
 				} catch (e) {

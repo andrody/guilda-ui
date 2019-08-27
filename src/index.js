@@ -2,3 +2,4 @@
 // components when built by webpack and sent off to the world.
 export * from './components';
 export * from './lib';
+export * from './hooks';

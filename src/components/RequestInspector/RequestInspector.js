@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import './style.css';
-import cx from 'classnames';
 import { getIconClassName } from '@uifabric/styling';
 import Draggable from 'react-draggable';
 import { useLocalStorage } from 'react-use';
+import cx from 'classnames';
 import { Panel, PanelType } from '../Panel';
 import ChoiceGroup from '../ChoiceGroup';
-import { TextField, Stack, Button } from '../index.js';
+import { TextField, Stack, Button } from '../index';
+import './style.css';
 
 const options = [
 	{
@@ -17,7 +17,7 @@ const options = [
 	{
 		key: 'production',
 		iconProps: { iconName: 'Database' },
-		text: 'Produção',
+		text: 'Production',
 		disabled: true,
 	},
 	{
@@ -108,7 +108,7 @@ function RequestInspector({ className, left, envs, onChange, ...props }) {
 				headerText="Select a Environment"
 				closeButtonAriaLabel="Close"
 				customWidth={340}
-				isLightDismiss={true}
+				isLightDismiss
 				// onRenderFooterContent={footer}
 			>
 				<Stack {...columnProps}>

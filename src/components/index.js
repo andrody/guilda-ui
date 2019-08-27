@@ -6,4 +6,6 @@ import './Toast';
 
 export { default as Button } from './Button';
 export { default as RequestInspector } from './RequestInspector';
+export { default as CommandPage } from './CommandPage';
+export { Panel, PanelType } from './Panel';
 export * from './FabricUI';
