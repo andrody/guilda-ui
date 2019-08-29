@@ -93,7 +93,7 @@ function RequestInspector({ className, left, envs, onChange, ...props }) {
 					onClick={() => setIsOpen(true)}
 				>
 					<i
-						className={getIconClassName(selectedEnvOption.iconProps.iconName)}
+						className={getIconClassName(selectedEnvOption?.iconProps?.iconName)}
 					/>
 					{environment.key === 'custom'
 						? environment.url
