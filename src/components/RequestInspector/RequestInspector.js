@@ -97,7 +97,7 @@ function RequestInspector({ className, left, envs, onChange, ...props }) {
 					/>
 					{environment.key === 'custom'
 						? environment.url
-						: selectedEnvOption.text}
+						: selectedEnvOption?.text}
 				</button>
 			</Draggable>
 			<Panel
