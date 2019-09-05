@@ -10,4 +10,4 @@ export { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 
 export { TextField, MaskedTextField };
 export { Stack };
-export { DefaultButton, ContextualMenu } from 'office-ui-fabric-react';
+export { DefaultButton, ContextualMenu } from 'office-ui-fabric-react/lib/Button';
