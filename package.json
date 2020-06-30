@@ -1,6 +1,6 @@
 {
   "name": "nanui",
-  "version": "1.0.22",
+  "version": "0.0.11",
   "description": "Nan UI. A React component library.",
   "main": "dist/nanui.js",
   "scripts": {
