@@ -31,6 +31,11 @@ const options = [
 		text: 'Mock',
 	},
 	{
+		key: 'mock-error',
+		iconProps: { iconName: 'FileBug' },
+		text: 'Mock Error',
+	},
+	{
 		key: 'custom',
 		iconProps: { iconName: 'WindowEdit' },
 		text: 'Custom',
