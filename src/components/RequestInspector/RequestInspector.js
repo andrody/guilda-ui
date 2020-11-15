@@ -18,7 +18,6 @@ const options = [
 		key: 'production',
 		iconProps: { iconName: 'Database' },
 		text: 'Production',
-		disabled: true,
 	},
 	{
 		key: 'localhost',
